@@ -310,7 +310,9 @@ body.hovering .cursor{ background:var(--white); }
 .project-visual{
   height:470px; position:relative; overflow:hidden; border:1px solid var(--line);
   background:linear-gradient(160deg, var(--card), #0d0c0a);
-  transition:transform .5s cubic-bezier(.16,1,.3,1), border-color .5s;
+  transition:border-color .35s cubic-bezier(.16,1,.3,1);
+  will-change:transform;
+  backface-visibility:hidden;
 }
 .project:hover .project-visual{ border-color:var(--gold-dim); }
 
@@ -1180,6 +1182,8 @@ const routes = document.querySelectorAll(".route");
 const tOrb = document.getElementById("tOrb");
 const tLabel = document.getElementById("tLabel");
 let routing = false;
+let activeTransition = null;
+let transitionFrom = null;
 
 const pageLabels = {
   home: "Home", work: "Selected Work", about: "About", services: "Services", contact: "Get in touch",
@@ -1202,7 +1206,13 @@ function activatePage(id, updateHistory){
 }
 
 function showPage(id, updateHistory = true){
-  if(routing || document.getElementById(id)?.classList.contains('active')) return;
+  if(!document.getElementById(id)) id = "home";
+  if(routing){
+    cancelMotion();
+    activatePage(id, updateHistory);
+    return;
+  }
+  if(document.getElementById(id)?.classList.contains('active')) return;
   if(reduceMotion){ activatePage(id, updateHistory); return; }
 
   const currentId = document.querySelector('.page.active')?.id;
@@ -1229,6 +1239,7 @@ function showPage(id, updateHistory = true){
 /* ---- main-nav transition: glowing iris reveal ---- */
 function irisTransition(id, updateHistory){
   routing = true;
+  transitionFrom = document.querySelector('.page.active')?.id || 'home';
   const currentPage = document.querySelector('.page.active');
   const label = pageLabels[id] || '';
 
@@ -1240,9 +1251,12 @@ function irisTransition(id, updateHistory){
     defaults: { force3D: true },
     onComplete: () => {
       routing = false;
+      activeTransition = null;
+      transitionFrom = null;
       gsap.set([currentPage, tOrb, tLabel], { clearProps: 'willChange' });
     }
   });
+  activeTransition = tl;
 
   // outgoing content settles while a glowing circle blooms outward from the
   // center, its gold rim racing ahead of the solid fill until it covers the
@@ -1261,6 +1275,7 @@ function irisTransition(id, updateHistory){
 function slideTransition(id, updateHistory, direction){
   routing = true;
   const oldPage = document.querySelector('.page.active');
+  transitionFrom = oldPage?.id || 'home';
   const newPage = document.getElementById(id);
   if(!newPage){ activatePage(id, updateHistory); routing = false; return; }
 
@@ -1289,11 +1304,25 @@ function slideTransition(id, updateHistory, direction){
       if(updateHistory){ history.pushState({page:id}, "", "#" + id); }
       animateEntrance(newPage);
       routing = false;
+      activeTransition = null;
+      transitionFrom = null;
     }
   });
+  activeTransition = tl;
 
   tl.to(oldPage, { xPercent: -32 * direction, opacity: .5, duration: .6, ease: 'power2.inOut' }, 0)
     .to(newPage, { xPercent: 0, duration: .65, ease: 'power3.out' }, .04);
+}
+
+function cancelMotion(){
+  if(activeTransition) activeTransition.kill();
+  activeTransition = null;
+  routing = false;
+  ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+  gsap.killTweensOf(document.querySelectorAll('.page, .reveal, .stack-item, .process-item, .service, .stat, .timeline-item, .arch-box, .project, .case-info, #tOrb, #tLabel'));
+  pages.forEach(page => gsap.set(page, { clearProps: 'position,top,left,width,zIndex,transform,opacity,willChange' }));
+  gsap.set([tOrb, tLabel], { clearProps: 'transform,opacity,willChange' });
+  transitionFrom = null;
 }
 
 routes.forEach(route => route.addEventListener("click", () => showPage(route.dataset.page)));
@@ -1332,8 +1361,6 @@ function animateEntrance(page){
     });
   }
 }
-animateEntrance(document.getElementById('home'));
-
 /* ================= HERO LOAD SEQUENCE ================= */
 window.addEventListener('load', () => {
   if(reduceMotion) return;
@@ -1368,23 +1395,15 @@ if(!isTouch){
 
 /* ================= PRISM — mouse-reactive + idle rotation ================= */
 const prism = document.getElementById('prism');
-let idleAngle = 0;
-
-if(!reduceMotion){
-  gsap.ticker.add(() => {
-    idleAngle += 0.06;
-  });
-}
+const prismRotateX = gsap.quickTo(prism, 'rotateX', { duration:.28, ease:'power2.out' });
+const prismRotateY = gsap.quickTo(prism, 'rotateY', { duration:.28, ease:'power2.out' });
 
 document.addEventListener("mousemove", e => {
   if(window.innerWidth < 900 || reduceMotion) return;
   const x = e.clientX / window.innerWidth - .5;
   const y = e.clientY / window.innerHeight - .5;
-  gsap.to(prism, {
-    rotateX: -16 + y * -18,
-    rotateY: 28 + x * 40 + idleAngle * 0,
-    duration: .6, ease: 'power2.out'
-  });
+  prismRotateX(-16 + y * -18);
+  prismRotateY(28 + x * 40);
 });
 
 if(!reduceMotion){
@@ -1394,14 +1413,24 @@ if(!reduceMotion){
 /* ================= PROJECT VISUAL TILT ================= */
 document.querySelectorAll(".project").forEach(project => {
   const visual = project.querySelector(".project-visual");
+  const tiltX = gsap.quickTo(visual, 'rotateX', { duration:.24, ease:'power2.out' });
+  const tiltY = gsap.quickTo(visual, 'rotateY', { duration:.24, ease:'power2.out' });
+  const moveY = gsap.quickTo(visual, 'y', { duration:.24, ease:'power2.out' });
+  gsap.set(visual, { transformPerspective:1000 });
   project.addEventListener("mousemove", e => {
     if(window.innerWidth < 900) return;
     const rect = visual.getBoundingClientRect();
     const x = e.clientX - rect.left, y = e.clientY - rect.top;
     const ry = ((x/rect.width)-.5)*7, rx = ((y/rect.height)-.5)*-7;
-    gsap.to(visual, { rotateX: rx, rotateY: ry, y: -5, duration: .4, ease: 'power2.out', transformPerspective: 1000 });
+    tiltX(rx);
+    tiltY(ry);
+    moveY(-5);
   });
-  project.addEventListener("mouseleave", () => gsap.to(visual, { rotateX:0, rotateY:0, y:0, duration:.6, ease:'power3.out' }));
+  project.addEventListener("mouseleave", () => {
+    tiltX(0);
+    tiltY(0);
+    moveY(0);
+  });
 });
 
 /* ================= CONTACT FORM ================= */
