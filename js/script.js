@@ -18,10 +18,10 @@ const pageLabels = {
   about: "About",
   services: "Services",
   contact: "Get in touch",
-  "case-vault": "Vault",
-  "case-crm": "CRM",
-  "case-growth": "Growth",
-  "case-brand": "Brand",
+  "case-vault": "RPM CRM",
+  "case-crm": "Sensory Brew",
+  "case-growth": "Events",
+  "case-brand": "Vault",
 };
 
 const caseOrder = ["case-vault", "case-crm", "case-growth", "case-brand"];
