@@ -265,6 +265,7 @@ body.hovering .cursor {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 .logo {
   font-weight: 800;
@@ -283,6 +284,7 @@ body.hovering .cursor {
 .nav-links {
   display: flex;
   gap: 30px;
+  align-items: center;
 }
 .nav-link {
   color: #8f8d85;
@@ -342,6 +344,11 @@ body.hovering .cursor {
     10px "DM Mono",
     monospace;
   text-transform: uppercase;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.mobile-menu[aria-expanded="true"] {
+  background: rgba(201, 169, 97, 0.08);
+  border-color: rgba(201, 169, 97, 0.4);
 }
 
 .app {
@@ -1171,20 +1178,50 @@ textarea.field {
 }
 
 @media (max-width: 950px) {
-  .nav-links,
   .availability {
     display: none;
   }
+
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    width: 100%;
+    padding: 18px 5%;
+    background: rgba(10, 10, 9, 0.98);
+    border: 1px solid var(--line);
+    border-top: 0;
+    z-index: 50;
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 9px;
+  }
+
   .mobile-menu {
     display: block;
   }
+
   .hero {
     grid-template-columns: 1fr;
     padding: 80px 0;
   }
+
   .hero-visual {
     height: 400px;
   }
+
   .two-column,
   .about-grid,
   .contact-grid,
@@ -1193,98 +1230,125 @@ textarea.field {
     grid-template-columns: 1fr;
     gap: 50px;
   }
+
   .projects {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
   .stats {
     grid-template-columns: 1fr 1fr;
   }
+
   .stat:nth-child(2) {
     border-right: 0;
   }
+
   .stack {
     grid-template-columns: 1fr 1fr;
   }
+
   .stack-item:nth-child(4n) {
     border-right: 1px solid var(--line);
   }
+
   .stack-item:nth-child(2n) {
     border-right: 0;
   }
+
   .process {
     grid-template-columns: 1fr 1fr;
   }
+
   .process-item:nth-child(2) {
     border-right: 0;
   }
+
   .case-info-grid {
     grid-template-columns: 1fr 1fr;
   }
+
   .case-info:nth-child(2) {
     border-right: 0;
   }
+
   .case-info {
     border-bottom: 1px solid var(--line);
   }
+
   .case-cover {
     height: 400px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 620px) {
   .container,
   .nav-inner {
-    width: 88%;
+    width: min(92%, 1380px);
   }
+
   .hero h1 {
-    font-size: 17vw;
+    font-size: clamp(42px, 17vw, 68px);
   }
+
   .hero-text {
     font-size: 15px;
   }
+
   .hero-visual {
     height: 320px;
   }
+
   .orbit-ring {
     width: 280px;
     height: 280px;
   }
+
   .orbit-ring.r2 {
     width: 220px;
     height: 220px;
   }
+
   .orbit-ring.r3 {
     width: 330px;
     height: 330px;
   }
+
   .prism-stage {
     width: 135px;
     height: 135px;
   }
+
   .pfront {
     transform: translateZ(67px);
   }
+
   .pback {
     transform: rotateY(180deg) translateZ(67px);
   }
+
   .pright {
     transform: rotateY(90deg) translateZ(67px);
   }
+
   .pleft {
     transform: rotateY(-90deg) translateZ(67px);
   }
+
   .ptop {
     transform: rotateX(90deg) translateZ(67px);
   }
+
   .pbottom {
     transform: rotateX(-90deg) translateZ(67px);
   }
+
   .stats,
   .stack,
   .process,
   .case-info-grid {
     grid-template-columns: 1fr;
   }
+
   .stat,
   .stack-item,
   .process-item,
@@ -1292,44 +1356,57 @@ textarea.field {
     border-right: 0 !important;
     padding-left: 0 !important;
   }
+
   .projects {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 18px;
   }
+
   .project-visual {
-    height: 150px;
+    height: 200px;
   }
+
   .page-header {
     display: block;
   }
+
   .page-header .mono {
     margin-top: 20px;
   }
+
   .service {
     grid-template-columns: 45px 1fr 20px;
   }
+
   .service h3 {
     font-size: 26px;
   }
+
   .case-title {
     font-size: 18vw;
   }
+
   .case-cover {
     height: 310px;
   }
+
   .case-section {
     padding: 75px 0;
   }
+
   .case-content p {
     font-size: 15px;
   }
+
   .architecture {
     grid-template-columns: 1fr;
   }
+
   .footer {
     display: block;
     line-height: 2.3;
   }
+
   .cursor,
   .cursor-ring {
     display: none;

@@ -35,7 +35,7 @@
     <header class="nav" id="siteNav">
       <div class="nav-inner">
         <button class="logo route" data-page="home">ABDUL<span>.</span></button>
-        <nav class="nav-links">
+        <nav class="nav-links" id="siteNavMenu">
           <button class="nav-link active route" data-page="home">Home</button>
           <button class="nav-link route" data-page="work">Work</button>
           <button class="nav-link route" data-page="about">About</button>
@@ -47,7 +47,7 @@
         <div class="availability">
           <span class="dot"></span><span class="mono">Available for work</span>
         </div>
-        <button class="mobile-menu" id="mobileMenu">Menu</button>
+        <button class="mobile-menu" id="mobileMenu" aria-expanded="false" aria-controls="siteNavMenu">Menu</button>
       </div>
     </header>
 

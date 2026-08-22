@@ -662,21 +662,34 @@ contactForm.addEventListener("submit", async (e) => {
 });
 
 const mobile = document.getElementById("mobileMenu");
-mobile.addEventListener("click", () => {
-  const navLinksEl = document.querySelector(".nav-links");
-  if (navLinksEl.style.display === "flex") {
-    navLinksEl.style.display = "none";
-  } else {
-    navLinksEl.style.display = "flex";
-    navLinksEl.style.position = "absolute";
-    navLinksEl.style.top = "82px";
-    navLinksEl.style.left = "0";
-    navLinksEl.style.width = "100%";
-    navLinksEl.style.padding = "25px 6%";
-    navLinksEl.style.background = "#0a0a09";
-    navLinksEl.style.flexDirection = "column";
-    navLinksEl.style.alignItems = "flex-start";
-    navLinksEl.style.borderBottom = "1px solid #28261f";
+const navLinksEl = document.querySelector(".nav-links");
+
+function closeMobileMenu() {
+  navLinksEl?.classList.remove("is-open");
+  mobile?.setAttribute("aria-expanded", "false");
+  mobile.textContent = "Menu";
+}
+
+function toggleMobileMenu() {
+  if (!navLinksEl) return;
+  const isOpen = navLinksEl.classList.toggle("is-open");
+  mobile.setAttribute("aria-expanded", String(isOpen));
+  mobile.textContent = isOpen ? "Close" : "Menu";
+}
+
+mobile.addEventListener("click", toggleMobileMenu);
+
+navLinksEl?.querySelectorAll(".nav-link").forEach((link) => {
+  link.addEventListener("click", () => {
+    if (window.innerWidth <= 950) {
+      closeMobileMenu();
+    }
+  });
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 950) {
+    closeMobileMenu();
   }
 });
 
