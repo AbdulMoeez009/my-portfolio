@@ -77,9 +77,9 @@ a {
   z-index: 1;
   pointer-events: none;
   background: radial-gradient(
-    ellipse 90% 70% at 50% 0%,
-    transparent 40%,
-    rgba(0, 0, 0, 0.4) 100%
+    ellipse 100% 90% at 50% 20%,
+    transparent 72%,
+    rgba(0, 0, 0, 0.08) 100%
   );
 }
 
@@ -671,17 +671,26 @@ body.hovering .cursor {
   line-height: 0.84;
   letter-spacing: -0.08em;
 }
+.not-found-copy {
+  max-width: 520px;
+  color: var(--soft);
+  line-height: 1.8;
+  margin: 0 0 28px;
+}
 .projects {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 70px 40px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px 22px;
   padding-bottom: 130px;
 }
 .project {
+  cursor: default;
+}
+.project[data-project] {
   cursor: pointer;
 }
 .project-visual {
-  height: 470px;
+  height: 190px;
   position: relative;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -690,57 +699,62 @@ body.hovering .cursor {
   will-change: transform;
   backface-visibility: hidden;
 }
-.project:hover .project-visual {
+.project[data-project]:hover .project-visual {
   border-color: var(--gold-dim);
+}
+.project[data-project]:focus-visible .project-visual {
+  outline: 2px solid var(--gold);
+  outline-offset: 5px;
+  border-color: var(--gold);
 }
 .project-num {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 12px;
+  left: 12px;
   color: var(--gold);
   z-index: 3;
 }
 .mockup {
   position: absolute;
   width: 76%;
-  height: 70%;
+  height: 62%;
   left: 12%;
-  top: 15%;
+  top: 22%;
   background: #0e0d0b;
   border: 1px solid #3a3830;
-  padding: 20px;
-  box-shadow: 30px 30px 90px rgba(0, 0, 0, 0.55);
-  transform: rotate(-3deg);
+  padding: 12px;
+  box-shadow: 14px 14px 40px rgba(0, 0, 0, 0.5);
+  transform: rotate(-2deg);
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .project:nth-child(even) .mockup {
-  transform: rotate(3deg);
+  transform: rotate(2deg);
 }
-.project:hover .mockup {
+.project[data-project]:hover .mockup {
   transform: rotate(0deg) scale(1.02);
 }
 .mock-top {
-  height: 20px;
+  height: 10px;
   border-bottom: 1px solid #33322c;
-  margin-bottom: 25px;
+  margin-bottom: 12px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
 }
 .mock-top:before {
   content: "";
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: var(--gold-dim);
 }
 .mock-lines {
   display: grid;
-  gap: 12px;
+  gap: 8px;
 }
 .mock-lines span {
   display: block;
-  height: 8px;
+  height: 5px;
   background: #242219;
 }
 .mock-lines span:nth-child(2) {
@@ -767,25 +781,26 @@ body.hovering .cursor {
   transform: rotate(-8deg);
 }
 .project-info {
-  padding: 18px 0;
+  padding: 12px 0;
   border-bottom: 1px solid var(--line);
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 12px;
 }
 .project-name {
-  font-size: 24px;
+  font-size: 15px;
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 .project-meta {
   color: var(--muted);
   font:
-    9px "DM Mono",
+    8.5px "DM Mono",
     monospace;
   text-transform: uppercase;
   text-align: right;
-  line-height: 1.7;
+  line-height: 1.6;
+  white-space: nowrap;
 }
 
 .about-grid {
@@ -929,9 +944,24 @@ body.hovering .cursor {
 .field:focus {
   border-color: var(--gold-dim);
 }
+.field:focus-visible,
+.btn:focus-visible,
+.nav-link:focus-visible,
+.logo:focus-visible,
+.mobile-menu:focus-visible,
+.case-nav button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
 textarea.field {
   min-height: 140px;
   resize: vertical;
+}
+.form-note {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+  margin-top: 2px;
 }
 
 .case {
@@ -1134,6 +1164,12 @@ textarea.field {
   }
 }
 
+@media (max-width: 1150px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 950px) {
   .nav-links,
   .availability {
@@ -1158,7 +1194,7 @@ textarea.field {
     gap: 50px;
   }
   .projects {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
   .stats {
     grid-template-columns: 1fr 1fr;
@@ -1256,12 +1292,12 @@ textarea.field {
     border-right: 0 !important;
     padding-left: 0 !important;
   }
-  .project-visual {
-    height: 310px;
+  .projects {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
   }
-  .mockup {
-    width: 80%;
-    left: 10%;
+  .project-visual {
+    height: 150px;
   }
   .page-header {
     display: block;

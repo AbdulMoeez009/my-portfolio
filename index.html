@@ -4,15 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Abdul Moeez — Full Stack Developer</title>
+    <meta
+      name="description"
+      content="Abdul Moeez — Full-stack developer and BSCS student in Lahore, Pakistan. Android apps, responsive web products, Firebase systems and client-ready digital experiences."
+    />
+    <meta name="theme-color" content="#0a0a09" />
+    <meta name="color-scheme" content="dark" />
+    <meta property="og:title" content="Abdul Moeez — Full Stack Developer" />
+    <meta
+      property="og:description"
+      content="Android apps, responsive web products, Firebase systems and client-ready digital experiences."
+    />
+    <meta property="og:type" content="website" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a0a09'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-style='italic' font-size='60' fill='%23c9a961' text-anchor='middle'%3EA.%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="grain"></div>
-    <div class="vignette"></div>
-    <div class="t-orb" id="tOrb"></div>
-    <div class="t-label" id="tLabel"></div>
-    <div class="cursor"></div>
-    <div class="cursor-ring"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="t-orb" id="tOrb" aria-hidden="true"></div>
+    <div class="t-label" id="tLabel" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
 
     <header class="nav" id="siteNav">
       <div class="nav-inner">
@@ -23,7 +41,6 @@
           <button class="nav-link route" data-page="about">About</button>
           <button class="nav-link route" data-page="experience">Experience</button>
           <button class="nav-link route" data-page="education">Education</button>
-          <button class="nav-link route" data-page="archive">Archive</button>
           <button class="nav-link route" data-page="services">Services</button>
           <button class="nav-link route" data-page="contact">Contact</button>
         </nav>
@@ -62,6 +79,12 @@
                 ><button class="btn route" data-page="contact">
                   <span>Start a project</span>
                 </button>
+                <a
+                  class="btn"
+                  href="assets/Abdul_Moeez_Resume.pdf"
+                  download="Abdul_Moeez_Resume.pdf"
+                  ><span>Download CV ↓</span></a
+                >
               </div>
             </div>
             <div class="hero-visual">
@@ -286,7 +309,7 @@
               <div class="mono muted">05 — Selected Work</div>
               <h2>PROJECTS.</h2>
             </div>
-            <div class="mono muted">Click a project for full case study</div>
+            <div class="mono muted">16 projects — open any project for the full case study</div>
           </div>
           <div class="projects">
             <article class="project" data-project="vault">
@@ -294,17 +317,12 @@
                 <div class="project-num mono">01</div>
                 <div class="mockup">
                   <div class="mock-top"></div>
-                  <div class="mock-lines">
-                    <span></span><span></span><span></span>
-                  </div>
-                  <div class="mock-chart"></div>
+                  <div class="mock-lines"><span></span><span></span><span></span></div>
                 </div>
               </div>
               <div class="project-info">
                 <div class="project-name">RPM CRM</div>
-                <div class="project-meta">
-                  Client Project / Firebase<br />2026 ↗
-                </div>
+                <div class="project-meta">Client Project / Firebase<br />2026 ↗</div>
               </div>
             </article>
             <article class="project" data-project="crm">
@@ -312,26 +330,12 @@
                 <div class="project-num mono">02</div>
                 <div class="mockup">
                   <div class="mock-top"></div>
-                  <div
-                    style="
-                      display: grid;
-                      grid-template-columns: 90px 1fr;
-                      gap: 18px;
-                    "
-                  >
-                    <div style="height: 230px; background: #1c1a13"></div>
-                    <div class="mock-lines">
-                      <span></span><span></span><span></span
-                      ><span style="width: 60%"></span>
-                    </div>
-                  </div>
+                  <div class="mock-lines"><span></span><span></span><span style="width: 60%"></span></div>
                 </div>
               </div>
               <div class="project-info">
                 <div class="project-name">Sensory Brew</div>
-                <div class="project-meta">
-                  Android / Java / Firebase<br />2026 ↗
-                </div>
+                <div class="project-meta">Android / Java / Firebase<br />2026 ↗</div>
               </div>
             </article>
             <article class="project" data-project="growth">
@@ -339,56 +343,181 @@
                 <div class="project-num mono">03</div>
                 <div class="mockup">
                   <div class="mock-top"></div>
-                  <div class="mock-lines">
-                    <span style="width: 90%"></span
-                    ><span style="width: 55%"></span
-                    ><span style="width: 80%"></span>
-                  </div>
-                  <div
-                    style="
-                      display: grid;
-                      grid-template-columns: 1fr 1fr;
-                      gap: 10px;
-                      margin-top: 30px;
-                    "
-                  >
-                    <div style="height: 120px; background: #1c1a13"></div>
-                    <div style="height: 120px; background: #242219"></div>
-                  </div>
+                  <div class="mock-lines"><span style="width: 90%"></span><span style="width: 55%"></span><span style="width: 80%"></span></div>
                 </div>
               </div>
               <div class="project-info">
                 <div class="project-name">Event Ticketing Platform</div>
-                <div class="project-meta">
-                  DecodeLabs Internship / Frontend<br />2026 ↗
-                </div>
+                <div class="project-meta">DecodeLabs Internship / Frontend<br />2026 ↗</div>
               </div>
             </article>
             <article class="project" data-project="brand">
               <div class="project-visual">
                 <div class="project-num mono">04</div>
                 <div class="mockup">
-                  <div
-                    style="
-                      font-size: 42px;
-                      letter-spacing: -0.08em;
-                      margin-bottom: 40px;
-                    "
-                    class="serif"
-                  >
-                    Vault.
-                  </div>
-                  <div class="mock-lines">
-                    <span></span><span style="width: 65%"></span
-                    ><span style="width: 82%"></span>
-                  </div>
+                  <div class="mock-top"></div>
+                  <div class="mock-lines"><span></span><span style="width: 65%"></span><span style="width: 82%"></span></div>
                 </div>
               </div>
               <div class="project-info">
                 <div class="project-name">Vault — Crypto Portfolio</div>
-                <div class="project-meta">
-                  Personal Project / Web App<br />2026 ↗
+                <div class="project-meta">Personal Project / Web App<br />2026 ↗</div>
+              </div>
+            </article>
+            <article class="project" data-project="quiz-master">
+              <div class="project-visual">
+                <div class="project-num mono">05</div>
+                <div class="mockup">
+                  <div class="mock-top"></div>
+                  <div class="mock-lines"><span></span><span></span><span style="width: 70%"></span></div>
                 </div>
+              </div>
+              <div class="project-info">
+                <div class="project-name">Quiz Master</div>
+                <div class="project-meta">Android / SQLite<br />Quiz app ↗</div>
+              </div>
+            </article>
+            <article class="project" data-project="expense-tracker">
+              <div class="project-visual">
+                <div class="project-num mono">06</div>
+                <div class="mockup">
+                  <div class="mock-top"></div>
+                  <div class="mock-lines"><span style="width: 85%"></span><span></span><span style="width: 55%"></span></div>
+                </div>
+              </div>
+              <div class="project-info">
+                <div class="project-name">Expense Tracker</div>
+                <div class="project-meta">Android / Room DB<br />Finance app ↗</div>
+              </div>
+            </article>
+            <article class="project" data-project="task-flow">
+              <div class="project-visual">
+                <div class="project-num mono">07</div>
+                <div class="mockup">
+                  <div class="mock-top"></div>
+                  <div class="mock-lines"><span></span><span style="width: 60%"></span><span></span></div>
+                </div>
+              </div>
+              <div class="project-info">
+                <div class="project-name">Task Flow</div>
+                <div class="project-meta">Android / Firebase<br />Task manager ↗</div>
+              </div>
+            </article>
+            <article class="project" data-project="food-nest">
+              <div class="project-visual">
+                <div class="project-num mono">08</div>
+                <div class="mockup">
+                  <div class="mock-top"></div>
+                  <div class="mock-lines"><span style="width: 90%"></span><span></span><span style="width: 65%"></span></div>
+                </div>
+              </div>
+              <div class="project-info">
+                <div class="project-name">Food Nest</div>
+                <div class="project-meta">Web App<br />Food delivery ↗</div>
+              </div>
+            </article>
+            <article class="project" data-project="vortex-studio">
+              <div class="project-visual">
+                <div class="project-num mono">09</div>
+                <div class="mockup">
+                  <div class="mock-top"></div>
+                  <div class="mock-lines"><span></span><span style="width: 75%"></span><span></span></div>
+                </div>
+              </div>
+              <div class="project-info">
+                <div class="project-name">Vortex Studio</div>
+                <div class="project-meta">Web App<br />Agency site ↗</div>
+              </div>
+            </article>
+            <article class="project" data-project="dev-folio">
+              <div class="project-visual">
+                <div class="project-num mono">10</div>
+                <div class="mockup">
+                  <div class="mock-top"></div>
+                  <div class="mock-lines"><span style="width: 70%"></span><span></span><span style="width: 55%"></span></div>
+                </div>
+              </div>
+              <div class="project-info">
+                <div class="project-name">Dev Folio</div>
+                <div class="project-meta">Web App<br />Portfolio site ↗</div>
+              </div>
+            </article>
+            <article class="project" data-project="shop-ease">
+              <div class="project-visual">
+                <div class="project-num mono">11</div>
+                <div class="mockup">
+                  <div class="mock-top"></div>
+                  <div class="mock-lines"><span></span><span></span><span style="width: 80%"></span></div>
+                </div>
+              </div>
+              <div class="project-info">
+                <div class="project-name">Shop Ease</div>
+                <div class="project-meta">Web App<br />E-commerce ↗</div>
+              </div>
+            </article>
+            <article class="project" data-project="vpower-online">
+              <div class="project-visual">
+                <div class="project-num mono">12</div>
+                <div class="mockup">
+                  <div class="mock-top"></div>
+                  <div class="mock-lines"><span style="width: 80%"></span><span style="width: 55%"></span><span></span></div>
+                </div>
+              </div>
+              <div class="project-info">
+                <div class="project-name">VPower Online</div>
+                <div class="project-meta">Wix Studio / Live Client<br />vponlinehub.com ↗</div>
+              </div>
+            </article>
+            <article class="project" data-project="ledger-crm">
+              <div class="project-visual">
+                <div class="project-num mono">13</div>
+                <div class="mockup">
+                  <div class="mock-top"></div>
+                  <div class="mock-lines"><span></span><span style="width: 65%"></span><span></span></div>
+                </div>
+              </div>
+              <div class="project-info">
+                <div class="project-name">Ledger CRM</div>
+                <div class="project-meta">Firebase / Firestore<br />Invoicing CRM ↗</div>
+              </div>
+            </article>
+            <article class="project" data-project="flowstate">
+              <div class="project-visual">
+                <div class="project-num mono">14</div>
+                <div class="mockup">
+                  <div class="mock-top"></div>
+                  <div class="mock-lines"><span style="width: 60%"></span><span></span><span style="width: 90%"></span></div>
+                </div>
+              </div>
+              <div class="project-info">
+                <div class="project-name">Flowstate</div>
+                <div class="project-meta">Web App<br />Waitlist landing ↗</div>
+              </div>
+            </article>
+            <article class="project" data-project="forex-analysis">
+              <div class="project-visual">
+                <div class="project-num mono">15</div>
+                <div class="mockup">
+                  <div class="mock-top"></div>
+                  <div class="mock-lines"><span></span><span style="width: 70%"></span><span style="width: 45%"></span></div>
+                </div>
+              </div>
+              <div class="project-info">
+                <div class="project-name">AI Forex Trading Analysis</div>
+                <div class="project-meta">Web App / AI<br />Smart Money Concepts ↗</div>
+              </div>
+            </article>
+            <article class="project" data-project="client-sites">
+              <div class="project-visual">
+                <div class="project-num mono">16</div>
+                <div class="mockup">
+                  <div class="mock-top"></div>
+                  <div class="mock-lines"><span style="width: 75%"></span><span></span><span style="width: 60%"></span></div>
+                </div>
+              </div>
+              <div class="project-info">
+                <div class="project-name">Client Portfolio & Agency Sites</div>
+                <div class="project-meta">5–6 Web Builds<br />Client work ↗</div>
               </div>
             </article>
           </div>
@@ -451,6 +580,13 @@
                   </div>
                 </div>
               </div>
+              <button
+                class="btn route"
+                data-page="experience"
+                style="margin-top: 30px"
+              >
+                <span>Full experience →</span>
+              </button>
               <div class="architecture" style="margin-top: 55px">
                 <div class="arch-box">
                   <strong>Android Applications</strong>
@@ -489,11 +625,204 @@
         </div>
       </section>
 
+      <section class="page" id="experience">
+        <div class="container">
+          <div class="page-header">
+            <div>
+              <div class="mono muted">07 — Experience</div>
+              <h2>EXPERIENCE.</h2>
+            </div>
+            <div class="mono muted">Roles, freelance & entrepreneurship</div>
+          </div>
+
+          <div class="case-section reveal">
+            <div class="case-section-grid">
+              <div>
+                <span class="mono muted">PRESENT · 4 MONTHS</span>
+                <h3>Sales Executive &<br /><span class="serif">Web Developer.</span></h3>
+              </div>
+              <div class="case-content">
+                <p style="margin-bottom: 15px">Next Key Technologies — Digital Marketing</p>
+                <ul>
+                  <li>Managed client outreach, lead conversion, and sales follow-up for a digital solutions company</li>
+                  <li>Developed and maintained web projects, contributing to client-facing web development work</li>
+                  <li>Collaborated with teams to ensure smooth client onboarding and project delivery</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-section reveal">
+            <div class="case-section-grid">
+              <div>
+                <span class="mono muted">PRESENT</span>
+                <h3>Full-Stack<br /><span class="serif">Development Intern.</span></h3>
+              </div>
+              <div class="case-content">
+                <p style="margin-bottom: 15px">DecodeLabs</p>
+                <p>
+                  Working across the stack on a structured, project-based internship curriculum — frontend interfaces through to backend APIs.
+                </p>
+                <ul>
+                  <li>Frontend: responsive, semantic-HTML interfaces in vanilla HTML/CSS/JS — mobile-first layouts with CSS Grid and Flexbox, fluid typography with clamp(), and WCAG-conscious accessibility</li>
+                  <li>Delivered Project 1 (event-ticketing site) through a Discovery → Wireframe → Semantics → Style → Interactivity → Audit workflow</li>
+                  <li>Backend: building a REST API (Project 2) with GET/POST endpoints, request validation and server-side logic</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-section reveal">
+            <div class="case-section-grid">
+              <div>
+                <span class="mono muted">2022 — PRESENT</span>
+                <h3>Entrepreneur.</h3>
+              </div>
+              <div class="case-content">
+                <p style="margin-bottom: 15px">Artificial Jewelry Business</p>
+                <ul>
+                  <li>Founded and independently managed a jewelry casting and retail business</li>
+                  <li>Handled procurement, pricing, sales, and customer relations end-to-end</li>
+                  <li>Developed practical business acumen and self-reliance through hands-on entrepreneurship</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-section reveal">
+            <div class="case-section-grid">
+              <div>
+                <span class="mono muted">2025 — 2026 · 5 MONTHS</span>
+                <h3>Sales Agent.</h3>
+              </div>
+              <div class="case-content">
+                <p style="margin-bottom: 15px">Pexdel Solutions — Digital Marketing Company</p>
+                <ul>
+                  <li>Managed client outreach and lead conversion for digital marketing services</li>
+                  <li>Handled customer queries and maintained strong client relationships</li>
+                  <li>Consistently met targets through proactive communication and follow-up</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-section reveal">
+            <div class="case-section-grid">
+              <div>
+                <span class="mono muted">2024 — 2025</span>
+                <h3>Affiliate<br /><span class="serif">Marketer.</span></h3>
+              </div>
+              <div class="case-content">
+                <p style="margin-bottom: 15px">Leads Quanta</p>
+                <ul>
+                  <li>Promoted company products through targeted digital platforms</li>
+                  <li>Managed campaigns and monitored conversion performance metrics</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-section reveal">
+            <div class="case-section-grid">
+              <div>
+                <span class="mono muted">2024 — 2025</span>
+                <h3>Teacher.</h3>
+              </div>
+              <div class="case-content">
+                <p style="margin-bottom: 15px">
+                  Oxford Grammar School · Professor Science Academy · AL-Khalid Science Academy · Allied School
+                </p>
+                <ul>
+                  <li>Taught computer science and related subjects to secondary-level students across 4 institutions</li>
+                  <li>Designed structured lesson plans and improved student academic outcomes</li>
+                  <li>Strengthened mentoring, presentation, and classroom management skills</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-section reveal" style="border-bottom: 0">
+            <div class="case-section-grid">
+              <div>
+                <span class="mono muted">LEADERSHIP</span>
+                <h3>ISSB <span class="serif">TCC 35th.</span></h3>
+              </div>
+              <div class="case-content">
+                <p>
+                  Appeared as an officer candidate (Captain) in the Pakistan Army ISSB TCC 35th — strengthened leadership, discipline, strategic thinking, and performance under pressure.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" id="education">
+        <div class="container">
+          <div class="page-header">
+            <div>
+              <div class="mono muted">08 — Education</div>
+              <h2>EDUCATION.</h2>
+            </div>
+          </div>
+          <div class="timeline" style="margin-top: 0">
+            <div class="timeline-item">
+              <div class="timeline-year mono">2023 — PRESENT</div>
+              <div>
+                <div class="timeline-title">BS Computer Science</div>
+                <p class="muted" style="font-size: 13px; margin-top: 8px; line-height: 1.7">
+                  National College of Business Administration & Economics (NCBA&E), Lahore — Ongoing, Semester 6
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year mono">2021 — 2023</div>
+              <div>
+                <div class="timeline-title">Intermediate — ICS</div>
+                <p class="muted" style="font-size: 13px; margin-top: 8px; line-height: 1.7">
+                  Government College Shalimar, Lahore — Majors: Computer, Statistics & Mathematics
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year mono">2019 — 2021</div>
+              <div>
+                <div class="timeline-title">Matriculation — Science</div>
+                <p class="muted" style="font-size: 13px; margin-top: 8px; line-height: 1.7">
+                  Private School, Lahore — Major: Biology
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="architecture" style="margin-top: 70px">
+            <div class="arch-box">
+              <strong>Core CS Foundation</strong>
+              <p class="muted">
+                Programming fundamentals through C, C++, Java and Python, alongside OOP and data-structure coursework at NCBA&E.
+              </p>
+            </div>
+            <div class="arch-box">
+              <strong>Math & Statistics</strong>
+              <p class="muted">
+                Intermediate coursework in Computer Science, Statistics and Mathematics built the analytical base used across projects.
+              </p>
+            </div>
+            <div class="arch-box">
+              <strong>Science Background</strong>
+              <p class="muted">
+                Matriculation in Science with a Biology major, rounding out a strong pre-university foundation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="page" id="services">
         <div class="container">
           <div class="page-header">
             <div>
-              <div class="mono muted">07 — Capabilities</div>
+              <div class="mono muted">10 — Capabilities</div>
               <h2>CAPABILITIES.</h2>
             </div>
           </div>
@@ -535,7 +864,7 @@
       <section class="page" id="contact">
         <div class="container">
           <div class="page-header">
-            <div><div class="mono muted">08 — Contact</div></div>
+            <div><div class="mono muted">11 — Contact</div></div>
           </div>
           <div class="contact-grid">
             <div class="contact-title">
@@ -561,26 +890,57 @@
                   target="_blank"
                   ><span>LinkedIn</span><span>abdul-moeez ↗</span></a
                 >
+                <!-- GitHub: add your profile link here when ready, e.g.
+                <a class="contact-link" href="https://github.com/YOUR_USERNAME" target="_blank"><span>GitHub</span><span>YOUR_USERNAME ↗</span></a>
+                -->
+                <a
+                  class="contact-link"
+                  href="assets/Abdul_Moeez_Resume.pdf"
+                  download="Abdul_Moeez_Resume.pdf"
+                  ><span>Resume</span><span>Download PDF ↓</span></a
+                >
               </div>
-              <form class="form" id="contactForm">
+              <form
+                class="form"
+                id="contactForm"
+                action="https://formsubmit.co/abdulmoeez3020@gmail.com"
+                method="POST"
+              >
+                <input type="hidden" name="_subject" value="New inquiry from portfolio site" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="false" />
                 <input
                   class="field"
                   type="text"
+                  name="name"
                   placeholder="Your name"
+                  aria-label="Your name"
                   required
                 /><input
                   class="field"
                   type="email"
+                  name="email"
                   placeholder="Your email"
+                  aria-label="Your email"
                   required
                 /><textarea
                   class="field"
+                  name="message"
                   placeholder="Tell me about your project..."
+                  aria-label="Tell me about your project"
                   required
                 ></textarea
                 ><button class="btn primary" type="submit">
                   <span>Send inquiry →</span>
                 </button>
+                <p
+                  class="mono muted"
+                  id="formStatus"
+                  role="status"
+                  aria-live="polite"
+                  style="margin-top: 10px; min-height: 14px"
+                ></p>
+                <p class="form-note">Your details are used only to reply to this inquiry.</p>
               </form>
             </div>
           </div>
@@ -591,7 +951,7 @@
         <div class="container">
           <div class="case-hero">
             <div>
-              <div class="case-number mono">PROJECT 01 / 04</div>
+              <div class="case-number mono">PROJECT 01 / 16</div>
               <h2 class="case-title">RPM CRM<span class="serif">.</span></h2>
               <p class="case-intro">
                 A Firebase and Firestore-backed CRM for a digital marketing call
@@ -620,7 +980,7 @@
             </div>
             <div class="case-info">
               <span class="mono muted">STACK</span
-              ><strong>Firebase / Firestore</strong>
+              ><strong>React / Node.js / Firebase / Firestore</strong>
             </div>
           </div>
           <div class="case-section">
@@ -711,6 +1071,8 @@
               </div>
               <div class="case-content">
                 <ul>
+                  <li>React dashboard interface and reusable workflow components</li>
+                  <li>Node.js business logic and API-ready service layer</li>
                   <li>Firebase Authentication for access control</li>
                   <li>Firestore for real-time lead and client data</li>
                   <li>Role-based application structure</li>
@@ -778,7 +1140,7 @@
         <div class="container">
           <div class="case-hero">
             <div>
-              <div class="case-number mono">PROJECT 02 / 04</div>
+              <div class="case-number mono">PROJECT 02 / 16</div>
               <h2 class="case-title">
                 SENSORY BREW<span class="serif">.</span>
               </h2>
@@ -809,7 +1171,7 @@
             </div>
             <div class="case-info">
               <span class="mono muted">STACK</span
-              ><strong>Firebase / MVVM</strong>
+              ><strong>Java / Kotlin / Firebase / MVVM</strong>
             </div>
           </div>
           <div class="case-section">
@@ -916,7 +1278,7 @@
         <div class="container">
           <div class="case-hero">
             <div>
-              <div class="case-number mono">PROJECT 03 / 04</div>
+              <div class="case-number mono">PROJECT 03 / 16</div>
               <h2 class="case-title">GROWTH<span class="serif">.</span></h2>
               <p class="case-intro">
                 A responsive and accessible event-ticketing frontend delivered
@@ -933,8 +1295,8 @@
           </div>
           <div class="case-info-grid">
             <div class="case-info">
-              <span class="mono muted">ROLE</span
-              ><strong>Frontend Intern</strong>
+                <span class="mono muted">ROLE</span
+              ><strong>Full Stack Intern</strong>
             </div>
             <div class="case-info">
               <span class="mono muted">YEAR</span><strong>2026</strong>
@@ -945,7 +1307,7 @@
             </div>
             <div class="case-info">
               <span class="mono muted">FOCUS</span
-              ><strong>Vanilla Web Stack</strong>
+              ><strong>React / Node.js / REST API</strong>
             </div>
           </div>
           <div class="case-section">
@@ -994,7 +1356,9 @@
               </div>
               <div class="case-content">
                 <ul>
-                  <li>Vanilla HTML, CSS and JavaScript</li>
+                  <li>React component-based frontend development</li>
+                  <li>Node.js REST API endpoints and server-side logic</li>
+                  <li>Firebase integration and structured application data</li>
                   <li>Semantic, accessible page structure</li>
                   <li>Responsive Grid and Flexbox systems</li>
                   <li>Mobile-first layout behavior</li>
@@ -1018,7 +1382,7 @@
         <div class="container">
           <div class="case-hero">
             <div>
-              <div class="case-number mono">PROJECT 04 / 04</div>
+              <div class="case-number mono">PROJECT 04 / 16</div>
               <h2 class="case-title">VAULT<span class="serif">.</span></h2>
               <p class="case-intro">
                 A crypto portfolio tracking web app with live multi-coin prices,
@@ -1046,7 +1410,7 @@
             </div>
             <div class="case-info">
               <span class="mono muted">FOCUS</span
-              ><strong>Crypto Tracking</strong>
+              ><strong>React / Node.js / Firebase</strong>
             </div>
           </div>
           <div class="case-section">
@@ -1114,7 +1478,7 @@
     </main>
 
     <footer class="footer container">
-      <span class="mono">© 2026 Abdul Moeez · Lahore, Pakistan</span
+      <span class="mono">© <span id="currentYear">2026</span> Abdul Moeez · Lahore, Pakistan</span
       ><span class="mono">BSCS · Semester 6 · Full Stack Developer</span
       ><span class="mono">Digital / Development / Design</span>
     </footer>
